@@ -18,15 +18,18 @@ export default function Header() {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: '6vh',
+    height: '10%',
     backgroundColor: '#E8E8E8',
     shadowColor: "#000",
+    marginBottom: 10,
     shadowOffset: {
       width: 0,
       height: 4,
     },
     shadowOpacity: 0.10,
     shadowRadius: 8,
+    elevation: 5
+
     // height: {windowHeight},
     // flex: 1,
     // backgroundColor: '#F6F6F6',
@@ -35,8 +38,9 @@ const styles = StyleSheet.create({
   },
   text: {
     marginLeft: '10%',
-    marginTop: '3%',
-    fontSize: '18px',
+    marginTop: 30,
+    // position: 'absolute',
+    fontSize: 18,
     fontWeight: 'bold'
   }
 });

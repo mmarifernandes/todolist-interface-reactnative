@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   notes:{
-    marginTop: '10vh',
+    // marginTop: '10vh',
     alignItems: 'center',
     
 

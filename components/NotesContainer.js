@@ -32,30 +32,32 @@ const styles = StyleSheet.create({
     backgroundColor: color? color : '#F1F0DE',
     width: '90%',
     height: 'fit-content',
-    borderRadius: '5px',
-    padding: '15px',
-    margin: '8px',
+    borderRadius: 5,
+    padding: 15,
+    margin: 8,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 2,
     },
-    shadowOpacity: 0.15,
+    shadowOpacity: 0.10,
     shadowRadius: 8,
+    elevation: 4
     // color: '#F1DEEA'
   }),
   text: {
     color: '#000',
-    fontSize: '16px'
+    fontSize: 16
   },
   header: {
-    display: 'flex',
+    // display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    // marginBottom: 10
   },
   title: {
-    fontSize: '20px',
+    fontSize: 20,
     fontWeight: '500'
   },
   date:{
