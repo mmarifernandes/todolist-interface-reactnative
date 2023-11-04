@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Dimensions } from 'react-native';
 import NotesContainer from '../components/NotesContainer';
@@ -18,7 +17,7 @@ export default function Header({title}) {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: '10%',
+    height: 75,
     backgroundColor: '#E8E8E8',
     shadowColor: "#000",
     // marginBottom: 10,
@@ -28,7 +27,8 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.10,
     shadowRadius: 8,
-    elevation: 5
+    elevation: 5,
+    
 
     // height: {windowHeight},
     // flex: 1,

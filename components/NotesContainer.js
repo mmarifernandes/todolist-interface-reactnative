@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -46,14 +45,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 15,
     margin: 8,
-    shadowColor: "#000",
+    shadowColor: '#2D2D2D',
     shadowOffset: {
       width: 0,
       height: 2,
     },
     shadowOpacity: 0.10,
     shadowRadius: 8,
-    elevation: 4
+    elevation: 1
     // color: '#F1DEEA'
   }),
   text: {

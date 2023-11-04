@@ -3,8 +3,7 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Dimensions } from 'react-native';
 import NotesContainer from '../components/NotesContainer';
 import Header from '../components/Header';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
