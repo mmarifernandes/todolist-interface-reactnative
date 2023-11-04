@@ -7,10 +7,10 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 // const notas = [{user: 'marina', data:'03/11/2023', color: '#F1DEEA', title: 'my title', texto: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet'}, {user: 'marina', data:'04/11/2023', color: '#F1F0DE', title: 'my title2', texto: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet'}];
 
-export default function Header() {
+export default function Header({title}) {
   return (
     <View style={styles.container}>
-    <Text style={styles.text}>home</Text>
+    <Text style={styles.text}>{title}</Text>
     </View>
   );
 }
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     height: '10%',
     backgroundColor: '#E8E8E8',
     shadowColor: "#000",
-    marginBottom: 10,
+    // marginBottom: 10,
     shadowOffset: {
       width: 0,
       height: 4,

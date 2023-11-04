@@ -1,21 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { Dimensions } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export default function NotesContainer({texto, title, data, user, color}) {
-  console.log(color)
+export default function NotesContainer({ texto, title, data, user, color}) {
+  const nota = 
+    {
+      user: user,
+      data: data,
+      color: color,
+      title: title,
+      texto: texto
+    }
+  const navigation = useNavigation();
+
   return (
     // <View style={styles.container}>
-      <View style = {styles.main(color)}>
-        <View style = {styles.header}>
-          <Text style= {styles.title}>{title}</Text>
-          <Text style= {styles.date}>{data}</Text>
-        </View>
-          <Text style= {styles.text}>{texto}</Text>
+    <TouchableOpacity style={styles.main(color)} onPress={() => navigation.navigate('Edit', {data: nota})}>
+      <View style={styles.header}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.date}>{data}</Text>
       </View>
+      <Text style={styles.text}>{texto}</Text>
+      <Image style={styles.image} source={require('../assets/trashcan.png')}/>      
+      </TouchableOpacity>
   );
 }
 
@@ -29,8 +40,8 @@ const styles = StyleSheet.create({
   //   justifyContent: 'center',
   // },
   main: (color) => ({
-    backgroundColor: color? color : '#F1F0DE',
-    width: '90%',
+    backgroundColor: color ? color : '#F1F0DE',
+    width: '93%',
     height: 'fit-content',
     borderRadius: 5,
     padding: 15,
@@ -47,7 +58,7 @@ const styles = StyleSheet.create({
   }),
   text: {
     color: '#000',
-    fontSize: 16
+    fontSize: 14
   },
   header: {
     // display: 'flex',
@@ -57,11 +68,18 @@ const styles = StyleSheet.create({
     // marginBottom: 10
   },
   title: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '500'
   },
-  date:{
-    color: '#595959'
+  date: {
+    color: '#595959',
+    fontSize: 12
+  },
+  image:{
+    width: 20,
+    height: 20,
+    alignSelf: 'flex-end',
+    marginTop: '5px'
   }
 
 });
