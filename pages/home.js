@@ -1,12 +1,16 @@
+import React, { Component, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Dimensions } from 'react-native';
 import NotesContainer from '../components/NotesContainer';
 import Header from '../components/Header';
+import axios from 'axios'
 
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+
+
 const notas = [
   {
     user: 'marina',
@@ -39,6 +43,19 @@ const notas = [
 ];
 
 export default function Home() {
+
+  const [data, setData] = React.useState([]);
+
+
+  useEffect(() =>{
+    axios.get('https://todolist-rocket-c33v.onrender.com/tasks/').then(response => { 
+        setData({ data: response.data })
+      }).catch(() => { 
+        console.log('Error retrieving data')
+      })
+    })
+    console.log(data)
+  
   return (
     <View style={styles.container}>
       <Header title = {'home'}/>
